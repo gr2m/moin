@@ -1,7 +1,0 @@
-{
-  "name": "hoodie-plugin-moin-tasks",
-  "description": "collects all the things.",
-  "dependencies": {},
-  "version": "0.0.0",
-  "main": "worker.js"
-}

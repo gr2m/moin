@@ -5,9 +5,9 @@
   "dependencies": {
     "hoodie-server": "0.9.1",
     "hoodie-plugin-appconfig": "~0.1.0",
-    "hoodie-plugin-email": "~0.1.1",
     "hoodie-plugin-users": "0.0.9",
-    "octonode": "~0.4.3",
+    "hoodie-plugin-moin": "git://github.com/gr2m/hoodie-plugin-moin.git",
+    "octonode": "git://github.com/pksunkara/octonode.git",
     "moment": "~2.5.1",
     "async": "~0.2.9"
   },
@@ -22,9 +22,8 @@
   "hoodie": {
     "plugins": [
       "hoodie-plugin-appconfig",
-      "hoodie-plugin-email",
       "hoodie-plugin-users",
-      "./plugins/hoodie-plugin-moin-tasks"
+      "hoodie-plugin-moin-tasks"
     ]
   }
 }
