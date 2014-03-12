@@ -3,23 +3,12 @@ var hoodie  = new Hoodie()
 var $history = $('#history');
 var moinStore = hoodie.store('moin');
 
-$(document.body).on('click', '.task.btn', function() {
-  var token = hoodie.config.get('github-token');
-  if (! token) {
-    token = prompt('Github token');
-
-    if (! token) {
-      return alert('sorry, github token required');
-    }
-
-    hoodie.config.set('github-token', token);
-  }
-
+$(document.body).on('click', '.task.btn', function(event) {
   var since = moment().subtract('days', 1).startOf('day').format('YYYY-MM-DD');
   hoodie.moinTasks.start({
     since: since,
     organizationName: 'hoodiehq',
-    sendEmail: !!prompt('send email?')
+    sendEmail: true
   });
   $history.html('<tr><td>loading ...</td></tr>');
 });
@@ -39,7 +28,7 @@ function renderTable (moinObjects) {
       return moin.text;
     }).join('\n\n');
 
-    html += '<tr><th>'+moinObject.id+'</th><td><pre>'+$('<div/>').text(content).html()+'</pre></td>';
+    html += '<tr><th>'+moinObject.id+'</th><td><pre>'+content+'</pre></td>';
   };
 
   $history.html(html);

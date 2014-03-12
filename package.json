@@ -3,13 +3,14 @@
   "version": "1.0.2",
   "type": "app",
   "dependencies": {
-    "hoodie-server": "0.9.1",
-    "hoodie-plugin-appconfig": "~0.1.0",
-    "hoodie-plugin-users": "0.0.9",
     "hoodie-plugin-moin": "git://github.com/gr2m/hoodie-plugin-moin.git",
     "octonode": "git://github.com/pksunkara/octonode.git",
     "moment": "~2.5.1",
-    "async": "~0.2.9"
+    "async": "~0.2.9",
+    "hoodie-plugin-email": "~0.1.4",
+    "hoodie-plugin-appconfig": "~0.2.0",
+    "hoodie-plugin-users": "~0.1.0",
+    "hoodie-server": "~0.9.19"
   },
   "subdomain": "hoodie-moin.app",
   "domains": [
@@ -22,8 +23,9 @@
   "hoodie": {
     "plugins": [
       "hoodie-plugin-appconfig",
+      "hoodie-plugin-email",
       "hoodie-plugin-users",
-      "hoodie-plugin-moin-tasks"
+      "hoodie-plugin-moin"
     ]
   }
 }
